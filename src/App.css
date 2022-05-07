@@ -2,52 +2,77 @@
   background-image: url('../src/images/background.jpg');
   display: flex;
   justify-content: center;  
-  height: 2000px;
+  height: 1200px;
 }
 
-.Header{
+.containerHeader{
+  display: flex;
+  margin-top: 5px;
+  justify-content: center;
+  height: fit-content;
+}
+
+.NavBar{
+  background-image: url('../src/images/navbar.jpg');
+  width: 100%;
+  height: 150px;
+}
+
+.textNavBar{
+  margin-left: 22px;
+  margin-right: 22px; 
+  color: whitesmoke !important;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 33px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} 
+
+.botonLogin{
+  margin-right: 20px;
+  margin-top: 0px;
+}
+
+.textLog{
+  margin-left: 15px;
+  margin-right: 50px;
+  width: 150px;
+}
+
+
+.carrouselContainer{
   width: 100%;
   height: fit-content;
   display: flex;
   justify-content: center;
 }
 
-.bodyStyle{
-  background-color: aqua;
+.carrouselStyle{
+  width: 70%;
+  height: fit-content;
+  margin-top: 2%;
+  margin-bottom: 1%;
   display: flex;
   justify-content: center;
 }
 
 
 
-.rowNavBar{
-  background-image: url('../src/images/navbar.jpg');
-  margin-top: 5px;
-  width: 100%;
-  height: 130px;
+
+.colFooter {
+  margin-top: 30px;
+  display: flex;
+}
+
+.labelFooterStyle{
   font-size: 20px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.textNavBar{
-  margin-left: 20px;
-  margin-right: 20px;
-  color:white;
-  font-family: 'Courier New', Courier, monospace, solid white;
-  font-size: 30px;
-  font-weight: bold;
-  width: 90%;
-  
-}
-
-.textLog{
-  /* color: antiquewhite;
-  margin-right: 40px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 40px; */
-  margin-left: 15px;
-  margin-right: 50px;
-  width: 130px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 1%;
+  margin-left: 10px;
+  margin-right: 10%;
+  font-weight: bolder;
 }
 
 

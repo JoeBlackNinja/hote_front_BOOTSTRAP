@@ -1,55 +1,52 @@
 import './App.css';
-import logo from '../src/images/backpackers-logos_white.png';
+
+import NavBar from '../src/components/NavBar'
+import { LabelDown } from './components/LabelDown';
 
 import { 
-  Button, 
   Col,
   Container,
-  Navbar,
-  Nav,
   Row
 } from 'react-bootstrap';
+import { Carrousel } from './components/Carrousel';
+
 
 function App() {
   return (    
-      <Container className='mainContainer' fluid>
-        <Row className='Header'>      
-          <Col xs={12}>
-            <Navbar className='rowNavBar'>
-            <Navbar.Brand className='Nav.Link.margin'>
-                <img src={logo} className='textLog'/>
-            </Navbar.Brand>
-              <Nav className="me-auto">
-                <Nav.Link href="/home">
-                  <label className='textNavBar'>Home</label>
-                </Nav.Link>
-                <Nav.Link href="#features">
-                  <label className='textNavBar'>About Us</label>
-                </Nav.Link>
-                <Nav.Link href="#pricing">
-                  <label className='textNavBar'>Reservation</label>
-                </Nav.Link>
-                <Nav.Link href="#pricing">
-                  <label className='textNavBar'>Bills</label>
-                </Nav.Link>
-              </Nav>
-              <Nav>
-                <Nav.Link 
-                    href=''
-                  ><Button 
-                    variant='outline-light'
-                    size='lg'
-                  >LOG IN</Button>
-                </Nav.Link>
-              </Nav>
-          </Navbar>            
-          </Col> 
-
-          <Col xs={12} className='bodyStyle'>
-            <h1>asdasd</h1>
+      <Container className='mainContainer' fluid>             
+        <Row className='containerHeader'>
+          <Col xs={12} >
+            <NavBar/>
           </Col>
+          <Col xs={12} className='carrouselStyle'>
+            <Carrousel/>
+          </Col>
+          <Col xs={11} md={9} className="colFooter">
+          <LabelDown message={"Our rates may vary directly with the exchange parity in the different currencies"}/>            
+          </Col>
+          <Col xs={11} md={2} className="colFooter">
+            <LabelDown message={"Visit our privacy notice"}/>            
+          </Col>
+         
+        </Row >
+        
 
-        </Row>
+        
+
+        {/* <Container fluid>
+          <Row>
+            <Col xs={12} className='carrouselStyle'>
+              <Carrousel/>
+            </Col>
+          </Row>
+        </Container> */}
+
+           
+
+          
+        
+          
+        
 
         
           
