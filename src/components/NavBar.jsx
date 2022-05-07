@@ -1,27 +1,37 @@
-import logo from '../images/backpackers-logos_white.png';
+import logo from "../images/backpackers-logos_white.png";
 
-import { Button, Navbar, Nav, FormLabel } from 'react-bootstrap';  
+import { Button, Navbar, Nav, FormLabel } from "react-bootstrap";
 
 const NavBar = () => {
   return (
-    <Navbar className='NavBar'>
-      <Navbar.Brand ><img src={logo} className="textLog" /></Navbar.Brand>
-      <Nav className="me-auto" >
-        <Nav.Link href="/home" className='textNavBar'>Home</Nav.Link>
-        <Nav.Link href="/aboutfeatures"  className='textNavBar'>About Us</Nav.Link>
-        <Nav.Link href="/reservation"  className='textNavBar'>Reservation</Nav.Link>
-        <Nav.Link href="/bills"  className='textNavBar'>Bills</Nav.Link>
+    <Navbar className="NavBar">
+      <Navbar.Brand>
+        <img src={logo} className="textLog" />
+      </Navbar.Brand>
+      <Nav className="me-auto">
+        <Nav.Link href="/home" className="textNavBar">
+          Home
+        </Nav.Link>
+        <Nav.Link href="/about" className="textNavBar">
+          About Us
+        </Nav.Link>
+        <Nav.Link href="/reservation" className="textNavBar">
+          Reservation
+        </Nav.Link>
+        <Nav.Link href="/bills" className="textNavBar">
+          Bills
+        </Nav.Link>
       </Nav>
       <Nav>
         <Nav.Link href="/login">
-          <Button variant="outline-light" size="lg" className='botonLogin'>
+          <Button variant="outline-light" size="lg" className="botonLogin">
             LOG IN
           </Button>
         </Nav.Link>
         <Nav.Link href="/signup">
-            <Button variant="light" size="lg" className='botonLogin'>
+          <Button variant="light" size="lg" className="botonLogin">
             SIGN UP
-            </Button>
+          </Button>
         </Nav.Link>
       </Nav>
     </Navbar>
