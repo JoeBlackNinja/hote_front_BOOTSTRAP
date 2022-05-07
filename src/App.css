@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainContainer {
+  background-image: url('../src/images/background.jpg');
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;  
+  height: 2000px;
+}
+
+.Header{
+  width: 100%;
+  height: fit-content;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.bodyStyle{
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.rowNavBar{
+  background-image: url('../src/images/navbar.jpg');
+  margin-top: 5px;
+  width: 100%;
+  height: 130px;
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.textNavBar{
+  margin-left: 20px;
+  margin-right: 20px;
+  color:white;
+  font-family: 'Courier New', Courier, monospace, solid white;
+  font-size: 30px;
+  font-weight: bold;
+  width: 90%;
+  
+}
+
+.textLog{
+  /* color: antiquewhite;
+  margin-right: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px; */
+  margin-left: 15px;
+  margin-right: 50px;
+  width: 130px;
+}
+
+
