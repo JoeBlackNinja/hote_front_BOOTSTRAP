@@ -21,6 +21,12 @@ const NavBar = () => {
         <Nav.Link href="/bills" className="textNavBar">
           Bills
         </Nav.Link>
+        <Nav.Link href="/statistics" className="textNavBar">
+          Statistics
+        </Nav.Link>
+        <Nav.Link href="/anomalies" className="textNavBar">
+          Anomalies
+        </Nav.Link>
       </Nav>
       <Nav>
         <Nav.Link href="/login">

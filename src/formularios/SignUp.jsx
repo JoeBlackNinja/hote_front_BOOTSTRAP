@@ -95,6 +95,7 @@ export default function SignUp() {
                     name="email"
                     label="Email Address"
                     type="email"
+                    
                     /* autoComplete="email" */
                     fullWidth
                     value={formik.values.email}

@@ -8,20 +8,29 @@ const AboutUs = () => {
                 <h1>
                     Who are we ?
                 </h1> 
-            <br/>           
+            <br/><br/><br/>         
                 <p>
-                    Aquí tienes la opción de hospedarte en dormitorios mixtos o sólo para mujeres, y también hay alternativa de habitaciones individuales. Pero sin duda lo mejor de este hostal, es su bar, El Cuatro, un espacio con buena música, deliciosa comida y punto de reunión de huéspedes y locales.
+                    Here you have the option of staying in mixed or female-only dorms, 
+                    and there are also alternative single rooms. But without a doubt 
+                    the best thing about this hostel is its bar, El Cuatro, a space with 
+                    good music, delicious food and a meeting point for guests and locals.
                 </p> 
+                <br/>
                 <p>
-                Su estilo moderno y contemporáneo hacen de este hostal una de las opciones preferidas de los viajeros extranjeros que buscan un hospedaje económico y confortable. Aquí hay habitaciones para todos los gustos y espacios comunes para descansar, entre ellas un área de Netflix&Chill.
-
-                Lo mejor es su terraza. Al caer la noche prepárate para disfrutar de unos refrescantes tragos, buena música y excelente compañía de todas partes del mundo.
-                </p>   
-
+                    Its modern and contemporary style make this hostel one of the preferred 
+                    options for foreign travelers looking for cheap and comfortable lodging. 
+                    Here there are rooms for all tastes and common spaces to rest, including 
+                    a Netflix & Chill area. The best thing is its terrace. When night falls, 
+                    get ready to enjoy some refreshing drinks, good music and excellent company 
+                    from all over the world.
+                </p>
+                <br/>
                 <p>
-                Este hostel es uno de los favoritos de los mochileros que están descubriendo Guadalajara. Una de las razones que lo convierten en el preferido es la amplitud de sus habitaciones, la limpieza, el ambiente y sobre todo los tours, actividades y experiencias que ofrecen.
-
-                Lo mejor es su bar y su piscina donde podrás relajarte después de un largo día explorando lo mejor de este destino.
+                    This hostel is one of the favorites of backpackers who are discovering 
+                    Guadalajara. One of the reasons that makes it the favorite is the spaciousness
+                    of its rooms, the cleanliness, the atmosphere and, above all, the tours, 
+                    activities and experiences they offer. The best thing is its bar and pool where 
+                    you can relax after a long day exploring the best of this destination.
                 </p>             
             </div>
         </>      

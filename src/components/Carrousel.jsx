@@ -7,23 +7,11 @@ import Imagen4 from '../images/carousel/4.jpg';
 import Imagen5 from '../images/carousel/5.jpg';
 import Imagen6 from '../images/carousel/6.jpg';
 
+import '../App.css'
+
 export const Carrousel = () => {
   return (
     <Carousel className="carrouselStyle">
-
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={Imagen1}
-          width="800px"
-          height="800px"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
 
       <Carousel.Item>
         <img
@@ -35,8 +23,22 @@ export const Carrousel = () => {
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Comfortable rooms</h3>
+          <p>If rest and attention are your thing, our comfortable rooms are for you.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={Imagen4}
+          width="800px"
+          height="800px"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+          <h3>Camping area</h3>
+          <p>You can enjoy our camping area at low cost.</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -50,9 +52,9 @@ export const Carrousel = () => {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Share Rooms</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          If your thing is to meet interesting people, lovers of adventure, our shared rooms are for you.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -60,14 +62,14 @@ export const Carrousel = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={Imagen4}
+          src={Imagen1}
           width="800px"
           height="800px"
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Dining room</h3>
+          <p>Coffee, delicious food and people from all over the world await you in our dining room.</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -80,8 +82,8 @@ export const Carrousel = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>PET friendly</h3>
+          <p>Come and register with your pet. We have an area for dogs, cats, ferrets, hedgehogs and hamsters.</p>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -94,8 +96,8 @@ export const Carrousel = () => {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Hostel Friendly</h3>
+          <p>At BackPackers hostel we are friendly with all kinds of people, tastes and preferences. Having as main policy zero tolerance to any type of discrimination.</p>
         </Carousel.Caption>
       </Carousel.Item>
 

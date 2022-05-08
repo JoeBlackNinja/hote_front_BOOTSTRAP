@@ -1,14 +1,8 @@
 import NavBar from './NavBar'
 import LabelDown from './LabelDown';
+import AboutUs from './AboutUs';
 
-import { 
-  Col,
-  Container,
-  Row
-} from 'react-bootstrap';
-
-import { Carrousel } from './Carrousel';
-
+import { Col, Container, Row } from 'react-bootstrap';
 
 export const Enrutador = (props) => {
   return (
@@ -17,7 +11,7 @@ export const Enrutador = (props) => {
           <Col xs={12} >
             <NavBar/>
           </Col>
-          <Col xs={12} className='carrouselStyle'>
+          <Col xs={12} className='carrouselContainer'>
             {props.renderizador}
           </Col>
           <Col xs={11} md={9} className="colFooter">
