@@ -16,6 +16,7 @@ import {Login} from '../src/formularios/Login';
 import {Bills} from '../src/formularios/Bills';
 import { Statistics } from './components/Statistics';
 import { Anomalies } from './formularios/Anomalies'
+import { Services } from './formularios/Services';
 
 function App() {
   return (    
@@ -30,9 +31,7 @@ function App() {
         <Route path="/login" element={<Enrutador renderizador={<Login/>}/>}/>
         <Route path="/statistics" element={<Enrutador renderizador={<Statistics/>}/>}/>
         <Route path="/anomalies" element={<Enrutador renderizador={<Anomalies/>}/>}/>
-
-        <Route path="/anom" element={<Enrutador renderizador={<h1>anom</h1>}/>}/>
-
+        <Route path="/services" element={<Enrutador renderizador={<Services/>}/>}/>
       </Routes>
     </BrowserRouter>
   );

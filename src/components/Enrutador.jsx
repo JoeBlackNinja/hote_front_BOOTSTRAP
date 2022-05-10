@@ -1,5 +1,6 @@
 import NavBar from './NavBar'
 import LabelDown from './LabelDown';
+import { Link } from "react-router-dom";
 import AboutUs from './AboutUs';
 
 import { Col, Container, Row } from 'react-bootstrap';
@@ -25,7 +26,10 @@ export const Enrutador = (props) => {
             <LabelDown message={"Our rates may vary directly with the exchange parity in the different currencies"}/>            
           </Col>
           <Col xs={5} md={2} className="colFooter">
-            <LabelDown message={"Visit our privacy notice"}/>            
+            <Link to="/privacy" className='linkTo'>
+              Visit our privacy notice
+            </Link>
+            {/* <LabelDown message={"Visit our privacy notice"}/>             */}
           </Col>
         </Row>
                    

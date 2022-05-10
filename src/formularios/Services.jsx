@@ -5,7 +5,7 @@ import apiDb from '../api/apiDb'
 
 //const bcrypt = require('bcryptjs'); 
 
-export const Login = () => {
+export const Services = () => {
   const [values,setValues] = useState({
     email:"",
     password:""
@@ -64,7 +64,7 @@ export const Login = () => {
 
   return (
     <Form className="formBills" onSubmit={handleSubmit}>   
-      <Form.Label className="labelBills">Log In</Form.Label>
+      <Form.Label className="labelBills">Services</Form.Label>
       <Form.Group className="mb-3">        
         <Form.Label className="labelForm">Email address</Form.Label>
         <Form.Control
