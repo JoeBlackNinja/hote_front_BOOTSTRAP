@@ -311,7 +311,7 @@ export const Reservation = (props) => {
 
         <Row>
           <Col xs={12}>
-            <Button className="buttonAnomaliesDown" variant="primary" type="submit">
+            <Button className="buttonAnomaliesDown" variant="success" type="submit">
               Submit
             </Button>
           </Col>

@@ -97,7 +97,7 @@ export const Anomalies = () => {
           </Col>
           <Col xs={4} className="colAnomalies">
             <Col xs={12} className="colAnomalies3">
-              <Button className="buttonAnomaliesFindUser" variant="primary" type="submit">
+              <Button className="buttonAnomaliesFindUser" variant="success" type="submit">
                 Submit
               </Button>
             </Col>
@@ -247,7 +247,7 @@ export const Anomalies = () => {
           <Col xs={12}>
             <Button
               className="buttonAnomaliesDown" 
-              variant="primary" 
+              variant="success" 
               type="submit"
               disabled={false}
             >Send </Button>

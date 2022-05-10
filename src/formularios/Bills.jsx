@@ -68,7 +68,7 @@ export const Bills = () => {
           </Col>          
         </Row>
         
-        <Button variant="primary" type="submit">
+        <Button variant="success" type="submit">
           Submit
         </Button>
       </Form>
