@@ -53,9 +53,126 @@ export const Reservation = () => {
             <Form.Label className="labelBills">Reservation</Form.Label>
           </Col>
         </Row>
+
+        <Row>
+        <Col xs={12}>
+            <Form.Group className="mb-1">
+              <Form.Label className="labelForm">Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                placeholder="Name"
+                onChange={handleChange}
+                value={values.email}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={6}>
+            <Form.Group className="mb-1">
+              <Form.Label className="labelForm">Name</Form.Label>
+              <Form.Control
+                type="string"
+                name="name"
+                placeholder="Name"
+                onChange={handleChange}
+                value={values.name}                
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={6}>
+            <Form.Group className="mb-1">
+              <Form.Label className="labelForm">Last name</Form.Label>
+              <Form.Control
+                type="string"
+                name="lastnameClient"
+                placeholder="Last name"
+                onChange={handleChange}
+                value={values.last_name}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
         <Row>
           <Col xs={12}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
+              <Form.Label className="labelForm">Address</Form.Label>
+              <Form.Control
+                type="string"
+                name="addressClient"
+                placeholder="Address"
+                onChange={handleChange}
+                value={values.address}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={6}>
+            <Form.Group className="mb-1">
+              <Form.Label className="labelForm">City</Form.Label>
+              <Form.Control
+                type="string"
+                name="cityClient"
+                placeholder="City"
+                onChange={handleChange}
+                value={values.city}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={6}>
+            <Form.Group className="mb-1">
+              <Form.Label className="labelForm">State</Form.Label>
+              <Form.Control
+                type="string"
+                name="stateClient"
+                placeholder="State"
+                onChange={handleChange}
+                value={values.state}
+                required
+              />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col xs={6}>
+            <Form.Group className="mb-4">
+              <Form.Label className="labelForm">Country</Form.Label>
+              <Form.Control
+                type="string"
+                name="cityClient"
+                placeholder="City"
+                onChange={handleChange}
+                value={values.country}
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={6}>
+            <Form.Group className="mb-4">
+              <Form.Label className="labelForm">Cellphone</Form.Label>
+              <Form.Control
+                type="number"
+                name="stateClient"
+                placeholder="State"
+                onChange={handleChange}
+                value={values.cellphone}
+                required
+              />
+            </Form.Group>
+          </Col>          
+        </Row>
+
+        <Row>
+          <Col xs={12}>
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Room</Form.Label>
                 <Form.Select 
                     aria-label="Default select example"
@@ -71,7 +188,7 @@ export const Reservation = () => {
         </Row>
         <Row>
           <Col xs={6}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Ingres date</Form.Label>
                 <Form.Control
                   type="date"
@@ -83,7 +200,7 @@ export const Reservation = () => {
               </Form.Group>
           </Col>
           <Col xs={6}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Depart date</Form.Label>
                 <Form.Control
                   type="date"
@@ -98,7 +215,7 @@ export const Reservation = () => {
 
         <Row>
           <Col xs={12}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
             <Form.Label className="labelForm">Credit card number</Form.Label>
             <Form.Control
               type="number"
@@ -113,7 +230,7 @@ export const Reservation = () => {
 
         <Row>
           <Col xs={6}>
-            <Form.Group className="mb-5">
+            <Form.Group className="mb-2">
               <Form.Label className="labelForm">Expiration date</Form.Label>
                 <Form.Control
                   type="date"
@@ -125,7 +242,7 @@ export const Reservation = () => {
               </Form.Group>
           </Col>
           <Col xs={6}>
-            <Form.Group className="mb-5">
+            <Form.Group className="mb-2">
               <Form.Label className="labelForm">CVV</Form.Label>
                 <Form.Control
                   type="number"
@@ -136,11 +253,17 @@ export const Reservation = () => {
                 />
               </Form.Group>
           </Col>
+          
         </Row>       
 
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <Row>
+          <Col xs={12}>
+            <Button className="buttonAnomaliesDown" variant="primary" type="submit">
+              Submit
+            </Button>
+          </Col>
+        </Row>
+
       </Form>
 
     

@@ -30,6 +30,9 @@ function App() {
         <Route path="/login" element={<Enrutador renderizador={<Login/>}/>}/>
         <Route path="/statistics" element={<Enrutador renderizador={<Statistics/>}/>}/>
         <Route path="/anomalies" element={<Enrutador renderizador={<Anomalies/>}/>}/>
+
+        <Route path="/anom" element={<Enrutador renderizador={<h1>anom</h1>}/>}/>
+
       </Routes>
     </BrowserRouter>
   );

@@ -79,9 +79,10 @@ export const Anomalies = () => {
             <Form.Label className="labelBills">Anomalies</Form.Label>
           </Col>
         </Row>
+        
         <Row>
           <Col xs={8}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Email client</Form.Label>
               <Form.Control
                 type="string"
@@ -95,9 +96,8 @@ export const Anomalies = () => {
           </Col>
 
           <Col xs={4} className="colAnomalies">
-            <Col className="colAnomalies2"></Col>
             <Col xs={12} className="colAnomalies3">
-              <Button variant="primary" type="submit">
+              <Button className="buttonAnomaliesFindUser" variant="primary" type="submit">
                 Submit
               </Button>
             </Col>
@@ -106,7 +106,7 @@ export const Anomalies = () => {
 
         <Row>
         <Col xs={12}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Email</Form.Label>
               <Form.Control
                 type="email"
@@ -120,7 +120,7 @@ export const Anomalies = () => {
             </Form.Group>
           </Col>
           <Col xs={6}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Name</Form.Label>
               <Form.Control
                 type="string"
@@ -134,7 +134,7 @@ export const Anomalies = () => {
             </Form.Group>
           </Col>
           <Col xs={6}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Last name</Form.Label>
               <Form.Control
                 type="string"
@@ -151,7 +151,7 @@ export const Anomalies = () => {
 
         <Row>
           <Col xs={12}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Address</Form.Label>
               <Form.Control
                 type="string"
@@ -168,7 +168,7 @@ export const Anomalies = () => {
 
         <Row>
           <Col xs={6}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">City</Form.Label>
               <Form.Control
                 type="string"
@@ -182,7 +182,7 @@ export const Anomalies = () => {
             </Form.Group>
           </Col>
           <Col xs={6}>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">State</Form.Label>
               <Form.Control
                 type="string"
@@ -199,7 +199,7 @@ export const Anomalies = () => {
 
         <Row>
           <Col xs={6}>
-            <Form.Group className="mb-5">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Country</Form.Label>
               <Form.Control
                 type="string"
@@ -213,7 +213,7 @@ export const Anomalies = () => {
             </Form.Group>
           </Col>
           <Col xs={6}>
-            <Form.Group className="mb-5">
+            <Form.Group className="mb-1">
               <Form.Label className="labelForm">Cellphone</Form.Label>
               <Form.Control
                 type="number"
@@ -225,16 +225,35 @@ export const Anomalies = () => {
                 required
               />
             </Form.Group>
-          </Col>
+          </Col>          
         </Row>
 
-        <Button 
-            variant="primary" 
-            type="submit"
-            disabled={formElementDisabled}
-        >
-          Update data
-        </Button>
+        <Row>    
+          <Col>
+            <Form.Group className="mb-1">
+                <Form.Label className="labelForm">Anomalie description</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={4}
+                  name="stateClient"
+                  placeholder="State"
+                  onChange={handleChange}
+                  disabled={formElementDisabled}
+                  value={values.cellphone}
+                  required
+                />
+              </Form.Group>
+          </Col>      
+          <Col xs={12}>
+            <Button
+              className="buttonAnomaliesDown" 
+              variant="primary" 
+              type="submit"
+              disabled={false}
+            >Send </Button>
+          </Col>
+        </Row>
+        
       </Form>
     </Container>
   );

@@ -1,44 +1,48 @@
 import logo from "../images/backpackers-logos_white.png";
 
 import { Button, Navbar, Nav, FormLabel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <Navbar className="NavBar">
       <Navbar.Brand>
+      <Link to="/home" className="textNavBar">
         <img src={logo} className="textLog" />
+      </Link>
       </Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="/home" className="textNavBar">
-          Home
-        </Nav.Link>
-        <Nav.Link href="/about" className="textNavBar">
+
+        <Link to="/about" className="textNavBar">
           About Us
-        </Nav.Link>
-        <Nav.Link href="/reservation" className="textNavBar">
+        </Link>
+        <Link to="/reservation" className="textNavBar">
           Reservation
-        </Nav.Link>
-        <Nav.Link href="/bills" className="textNavBar">
+        </Link>
+        <Link to="/bills" className="textNavBar">
           Bills
-        </Nav.Link>
-        <Nav.Link href="/statistics" className="textNavBar">
+        </Link>
+        <Link to="/statistics" className="textNavBar">
           Statistics
-        </Nav.Link>
-        <Nav.Link href="/anomalies" className="textNavBar">
+        </Link>
+        <Link to="/anomalies" className="textNavBar">
           Anomalies
-        </Nav.Link>
+        </Link>
+        <Link to="/anomalies" className="textNavBar">
+          Services
+        </Link>
       </Nav>
       <Nav>
-        <Nav.Link href="/login">
+        <Link to="/login">
           <Button variant="outline-light" size="lg" className="botonLogin">
             LOG IN
           </Button>
-        </Nav.Link>
-        <Nav.Link href="/signup">
+        </Link>
+        <Link to="/signup">
           <Button variant="light" size="lg" className="botonLogin">
             SIGN UP
           </Button>
-        </Nav.Link>
+        </Link>
       </Nav>
     </Navbar>
   );
