@@ -1,17 +1,62 @@
 import { Form, Button } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import apiDb from "../api/apiDb";
 
 import { Container, Row, Col } from "react-bootstrap";
 
 // const bcrypt = require('bcryptjs');
 
-export const Reservation = () => {
-  const [values, setValues] = useState({
+export const Reservation = (props) => {
+  /* const [values, setValues] = useState({
     email: "",
     password: "",
     passwordConfirmation: "",
+  }); */
+
+  const [values, setValues] = useState({
+    email: "",
+    name:"",
+    last_name:"",
+    address:"",
+    city:"",
+    state:"",
+    country:"",
+    cellphone:""
   });
+
+  useEffect(() => {
+    localStorage.getItem('client') && clientDataFromToken()
+  }, [])
+
+  const clientDataFromToken = async () => {
+    let infoUser = await localStorage.getItem('client');
+    let infoUserObject = JSON.parse(infoUser);
+    /* console.log(infoUserObject); */
+    setValues({
+      email: infoUserObject.email,
+      name: infoUserObject.name,
+      last_name: infoUserObject.last_name,
+      address: infoUserObject.address,
+      city: infoUserObject.city,
+      state: infoUserObject.state,
+      country: infoUserObject.coutry,
+      cellphone: infoUserObject.cellphone
+    });
+  }
+
+  const FullFormReservation = async () => {
+    const { data } = await apiDb.post("/consultClient", values.email);
+    setValues({
+      email: data.email,
+      name:data.name,
+      last_name:data.last_name,
+      address:data.address,
+      city:data.city,
+      state:data.state,
+      country:data.country,
+      cellphone:data.cellphone
+    });
+  }  
 
   //BACKEND CONNECTION
   const sendFetch = async () => {
@@ -61,9 +106,10 @@ export const Reservation = () => {
               <Form.Control
                 type="email"
                 name="email"
-                placeholder="Name"
+                placeholder="Email client"
                 onChange={handleChange}
                 value={values.email}
+                disabled={true}
                 required
               />
             </Form.Group>
@@ -76,7 +122,8 @@ export const Reservation = () => {
                 name="name"
                 placeholder="Name"
                 onChange={handleChange}
-                value={values.name}                
+                value={values.name}      
+                disabled={true}          
                 required
               />
             </Form.Group>
@@ -90,6 +137,7 @@ export const Reservation = () => {
                 placeholder="Last name"
                 onChange={handleChange}
                 value={values.last_name}
+                disabled={true}
                 required
               />
             </Form.Group>
@@ -106,6 +154,7 @@ export const Reservation = () => {
                 placeholder="Address"
                 onChange={handleChange}
                 value={values.address}
+                disabled={true}
                 required
               />
             </Form.Group>
@@ -122,6 +171,7 @@ export const Reservation = () => {
                 placeholder="City"
                 onChange={handleChange}
                 value={values.city}
+                disabled={true}
                 required
               />
             </Form.Group>
@@ -135,6 +185,7 @@ export const Reservation = () => {
                 placeholder="State"
                 onChange={handleChange}
                 value={values.state}
+                disabled={true}
                 required
               />
             </Form.Group>
@@ -151,6 +202,7 @@ export const Reservation = () => {
                 placeholder="City"
                 onChange={handleChange}
                 value={values.country}
+                disabled={true}
                 required
               />
             </Form.Group>
@@ -164,6 +216,7 @@ export const Reservation = () => {
                 placeholder="State"
                 onChange={handleChange}
                 value={values.cellphone}
+                disabled={true}
                 required
               />
             </Form.Group>

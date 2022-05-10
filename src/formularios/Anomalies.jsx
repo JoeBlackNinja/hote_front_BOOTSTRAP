@@ -72,14 +72,15 @@ export const Anomalies = () => {
 //   };
 
   return (
-    <Container className="reservationForm" fluid>
-      <Form className="formBills" onSubmit={handleSubmitFind}>
+    <Container className="reservationForm" >
+      <Row className="formBills">
+      <Row >
+      <Form onSubmit={handleSubmitFind}>
         <Row>
           <Col xs={12}>
             <Form.Label className="labelBills">Anomalies</Form.Label>
           </Col>
-        </Row>
-        
+        </Row>        
         <Row>
           <Col xs={8}>
             <Form.Group className="mb-1">
@@ -94,7 +95,6 @@ export const Anomalies = () => {
               />
             </Form.Group>
           </Col>
-
           <Col xs={4} className="colAnomalies">
             <Col xs={12} className="colAnomalies3">
               <Button className="buttonAnomaliesFindUser" variant="success" type="submit">
@@ -103,7 +103,10 @@ export const Anomalies = () => {
             </Col>
           </Col>
         </Row>
+      </Form>
+      </Row>
 
+      <Form >
         <Row>
         <Col xs={12}>
             <Form.Group className="mb-1">
@@ -237,9 +240,6 @@ export const Anomalies = () => {
                   rows={4}
                   name="stateClient"
                   placeholder="State"
-                  onChange={handleChange}
-                  disabled={formElementDisabled}
-                  value={values.cellphone}
                   required
                 />
               </Form.Group>
@@ -255,6 +255,7 @@ export const Anomalies = () => {
         </Row>
         
       </Form>
-    </Container>
+      </Row>
+     </Container>
   );
 };
