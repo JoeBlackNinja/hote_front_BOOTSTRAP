@@ -1,6 +1,8 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
-import apiDb from '../api/apiDb'
+import apiDb from '../api/apiDb';
+
+import { useNavigate } from "react-router-dom";
 
 //const bcrypt = require('bcryptjs'); 
 
@@ -9,11 +11,10 @@ export const Login = () => {
     email:"",
     password:""
   });
+
+  const Navigate = useNavigate();
   
   //BACKEND CONNECTION
-  
-  /*
-
   const sendFetch = async () => {
     const user = {
       email:`${values.email}`, 
@@ -21,11 +22,10 @@ export const Login = () => {
   }
   
   const {data} = await apiDb.post('/login', user)
-  localStorage.setItem('token', data);
-  console.log(data);
+  localStorage.setItem('client', JSON.stringify(data));
   }
 
-  */
+ 
 
   const handleChange = (event) => {  
     setValues({
@@ -36,29 +36,8 @@ export const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();   
-
-    /* sendFetch(); */
-    const user = {
-      id:28,
-      email:values.email,
-      pass: values.password,
-      name:"Jose",
-      last_name:"Garrapata",
-      address:"Calle Chinche 234",
-      city:"Zapopan",
-      state:"Jalisco",
-      country:"Sri Lanka",
-      cellphone:"3312345678",
-      account_type:true      
-    }
-
-    /* let salt = bcrypt.genSaltSync(10);
-    let cryptoInfo = bcrypt.hashSync(user, salt);  */
-
-/*     localStorage.setItem('token', userString);
-    let c = localStorage.getItem('token');
-    console.log(c); */
-
+    sendFetch();
+    Navigate("/home");
   }
 
   return (
