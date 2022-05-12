@@ -1,38 +1,38 @@
 import { Form, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import apiDb from "../api/apiDb";
-
 import { Container, Row, Col } from "react-bootstrap";
 
-// const bcrypt = require('bcryptjs');
+import apiDb from "../api/apiDb";
+const bcrypt = require('bcryptjs');
 
-export const Reservation = (props) => {
-  /* const [values, setValues] = useState({
-    email: "",
-    password: "",
-    passwordConfirmation: "",
-  }); */
-
+export const Reservation = ( ) => {
   const [values, setValues] = useState({
+    id_client:"",
     email: "",
-    name:"",
-    last_name:"",
-    address:"",
-    city:"",
-    state:"",
-    country:"",
-    cellphone:""
-  });
-
+    name: "",
+    last_name: "",
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    cellphone: "",
+    cc:"",
+    ed:"",
+    cvv:"",
+    id_type_room_fk: "",
+    ingres_date: "",
+    out_date:"" 
+  }); 
+  
   useEffect(() => {
-    localStorage.getItem('client') && clientDataFromToken()
+    //localStorage.getItem('user') && clientDataFromToken()
   }, [])
 
   const clientDataFromToken = async () => {
-    let infoUser = await localStorage.getItem('client');
+    let infoUser = await localStorage.getItem('user');
     let infoUserObject = JSON.parse(infoUser);
-    /* console.log(infoUserObject); */
     setValues({
+      id_client:infoUserObject.id,
       email: infoUserObject.email,
       name: infoUserObject.name,
       last_name: infoUserObject.last_name,
@@ -40,33 +40,32 @@ export const Reservation = (props) => {
       city: infoUserObject.city,
       state: infoUserObject.state,
       country: infoUserObject.coutry,
-      cellphone: infoUserObject.cellphone
+      cellphone: infoUserObject.cellphone 
     });
   }
-
-  const FullFormReservation = async () => {
-    const { data } = await apiDb.post("/consultClient", values.email);
-    setValues({
-      email: data.email,
-      name:data.name,
-      last_name:data.last_name,
-      address:data.address,
-      city:data.city,
-      state:data.state,
-      country:data.country,
-      cellphone:data.cellphone
-    });
-  }  
 
   //BACKEND CONNECTION
   const sendFetch = async () => {
     const user = {
+      id_client:`${values.id_client}`,
       email: `${values.email}`,
-      pass: `${values.password}`,
-      idclient: "1",
+      name:`${values.name}`,
+      last_name:`${values.last_name}`,
+      address:`${values.address}`,
+      city:`${values.city}`,
+      state:`${values.state}`,
+      country:`${values.country}`,
+      cellphone:`${values.cellphone}`,
+      cc:`${values.cc}`,
+      ed:`${values.ed}`,
+      cvv:`${values.cvv}`,
+      id_type_room_fk: `${values.id_type_room_fk}`,
+      ingres_date: `${values.ingres_date}`,
+      out_date:`${values.out_date}`
     };
 
-    const { data } = await apiDb.post("/createUser", user);
+    const { data } = await apiDb.post("/createReservation", user);
+    console.log(data);
     localStorage.setItem("token", data);
   };
 
@@ -75,24 +74,19 @@ export const Reservation = (props) => {
       ...values,
       [event.target.name]: event.target.value,
     });
+    console.log(values);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event) => { 
     event.preventDefault();
-
-    // console.log("No Encriptado: ", values.password);
-    // let salt = bcrypt.genSaltSync(10);
-    // setValues({password: bcrypt.hashSync(values.password, salt)});
-    // console.log("Encriptado: ", values.password);
-
-    if (values.password === values.passwordConfirmation) {
-      sendFetch();
-    }
+    console.log(values);
+    sendFetch();    
   };
 
   return (
-    <Container className="reservationForm" fluid>
-      <Row className="formBills">
+    <Container className="reservationForm" fluid>      
+      <Form className="formBills" onSubmit={handleSubmit}>
+
       <Form.Group onSubmit={handleSubmit}>
         <Row>
           <Col xs={12}>
@@ -102,7 +96,7 @@ export const Reservation = (props) => {
 
         <Row>
         <Col xs={12}>
-            <Form.Group className="mb-1">
+            <Form.Group className="mb-1" > 
               <Form.Label className="labelForm">Email</Form.Label>
               <Form.Control
                 type="email"
@@ -110,10 +104,9 @@ export const Reservation = (props) => {
                 placeholder="Email client"
                 onChange={handleChange}
                 value={values.email}
-                disabled={true}
                 required
               />
-            </Form.Group>
+            </Form.Group> 
           </Col>
           <Col xs={6}>
             <Form.Group className="mb-1">
@@ -123,8 +116,7 @@ export const Reservation = (props) => {
                 name="name"
                 placeholder="Name"
                 onChange={handleChange}
-                value={values.name}      
-                disabled={true}          
+                value={values.name}                
                 required
               />
             </Form.Group>
@@ -134,11 +126,11 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Last name</Form.Label>
               <Form.Control
                 type="string"
-                name="lastnameClient"
+                name="last_name"
                 placeholder="Last name"
                 onChange={handleChange}
                 value={values.last_name}
-                disabled={true}
+                
                 required
               />
             </Form.Group>
@@ -151,11 +143,11 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Address</Form.Label>
               <Form.Control
                 type="string"
-                name="addressClient"
+                name="address"
                 placeholder="Address"
                 onChange={handleChange}
                 value={values.address}
-                disabled={true}
+                
                 required
               />
             </Form.Group>
@@ -168,11 +160,11 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">City</Form.Label>
               <Form.Control
                 type="string"
-                name="cityClient"
+                name="city"
                 placeholder="City"
                 onChange={handleChange}
                 value={values.city}
-                disabled={true}
+                
                 required
               />
             </Form.Group>
@@ -182,11 +174,11 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">State</Form.Label>
               <Form.Control
                 type="string"
-                name="stateClient"
+                name="state"
                 placeholder="State"
                 onChange={handleChange}
                 value={values.state}
-                disabled={true}
+                
                 required
               />
             </Form.Group>
@@ -199,11 +191,11 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Country</Form.Label>
               <Form.Control
                 type="string"
-                name="cityClient"
+                name="country"
                 placeholder="City"
                 onChange={handleChange}
                 value={values.country}
-                disabled={true}
+                
                 required
               />
             </Form.Group>
@@ -213,11 +205,11 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Cellphone</Form.Label>
               <Form.Control
                 type="number"
-                name="stateClient"
+                name="cellphone"
                 placeholder="State"
                 onChange={handleChange}
                 value={values.cellphone}
-                disabled={true}
+                
                 required
               />
             </Form.Group>
@@ -230,12 +222,15 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Room</Form.Label>
                 <Form.Select 
                     aria-label="Default select example"
+                    name="id_type_room_fk"
+                    value={values.id_type_room_fk}
+                    onChange={handleChange}
                     required  
                   >
                   <option>Open this select menu</option>
-                  <option value="single">Single</option>
-                  <option value="deluxe">Deluxe</option>
-                  <option value="imperial">Imperial</option>
+                  <option value={1}>Single</option>
+                  <option value={2}>Deluxe</option>
+                  <option value={3}>Imperial</option>
                 </Form.Select>
               </Form.Group>
           </Col>          
@@ -246,9 +241,10 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Ingres date</Form.Label>
                 <Form.Control
                   type="date"
-                  name="dateIngres"
+                  name="ingres_date"
                   placeholder="Enter email"
                   onChange={handleChange}
+                  value={values.ingres_date}
                   required
                 />
               </Form.Group>
@@ -258,9 +254,10 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Depart date</Form.Label>
                 <Form.Control
                   type="date"
-                  name="departDate"
+                  name="out_date"
                   placeholder="Enter email"
                   onChange={handleChange}
+                  value={values.out_date}
                   required
                 />
               </Form.Group>
@@ -273,9 +270,10 @@ export const Reservation = (props) => {
             <Form.Label className="labelForm">Credit card number</Form.Label>
             <Form.Control
               type="number"
-              name="passwordConfirmation"
+              name="cc"
               placeholder="XXXX-XXXX-XXXX-XXXX"
               onChange={handleChange}
+              value={values.cc}
               required
             />
         </Form.Group>
@@ -288,9 +286,10 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">Expiration date</Form.Label>
                 <Form.Control
                   type="date"
-                  name="dateIngres"
+                  name="ed"
                   placeholder="MM/YYYY"
                   onChange={handleChange}
+                  value={values.ed}
                   required
                 />
               </Form.Group>
@@ -300,9 +299,10 @@ export const Reservation = (props) => {
               <Form.Label className="labelForm">CVV</Form.Label>
                 <Form.Control
                   type="number"
-                  name="departDate"
+                  name="cvv"
                   placeholder="XXX"
                   onChange={handleChange}
+                  value={values.cvv}
                   required
                 />
               </Form.Group>
@@ -318,7 +318,8 @@ export const Reservation = (props) => {
           </Col>
         </Row>
       </Form.Group>
-    </Row>
+    
+    </Form>
 
     
 

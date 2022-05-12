@@ -1,10 +1,14 @@
 import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
-import apiDb from '../api/apiDb'
+import apiDb from '../api/apiDb';
+import {useNavigate} from 'react-router-dom';
 
 const bcrypt = require('bcryptjs');
 
 export const SignUpBootstrap = () => {
+
+  const Navigate = useNavigate();
+
   const [values,setValues] = useState({
     email:"",
     password:"",
@@ -12,15 +16,17 @@ export const SignUpBootstrap = () => {
   });
   
   //BACKEND CONNECTION
-  const sendFetch = async (cryptoEmail,cryptoPass) => {
+  const sendFetch = async () => {
     const user = {
-        email:cryptoEmail, 
-        pass:cryptoPass,
+        email:values.email, 
+        pass:values.pass,
         idclient: '1'    
     }
-    console.log(user);
-    const {data} = await apiDb.post('/createUser', user)
-    // localStorage.setItem('token', data);
+    const {data} = await apiDb.post('/createUser', user);
+    const user_ = JSON.stringify(data);
+    localStorage.setItem('user', user_);
+
+    Navigate('/home');
   }
 
   const handleChange = (event) => {  
@@ -33,17 +39,17 @@ export const SignUpBootstrap = () => {
   const handleSubmit = (event) => {
     event.preventDefault();   
 
-    let salt = bcrypt.genSaltSync(10);
-    let cryptoPass = bcrypt.hashSync(values.password, salt);
-    let cryptoEmail = bcrypt.hashSync(values.email, salt);
+    // let salt = bcrypt.genSaltSync(10);
+    // let cryptoPass = bcrypt.hashSync(values.password, salt);
+    // let cryptoEmail = bcrypt.hashSync(values.email, salt);
 
-    setValues({
-      email:cryptoEmail,
-      password:cryptoPass
-    });
+    // setValues({
+    //   email:values.email,
+    //   password:values.password
+    // });
 
     if(values.password === values.passwordConfirmation){
-      sendFetch(cryptoEmail,cryptoPass);
+      sendFetch();
     }
   }
 
