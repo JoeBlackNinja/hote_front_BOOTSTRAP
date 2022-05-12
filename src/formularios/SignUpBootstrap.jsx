@@ -5,7 +5,6 @@ import apiDb from '../api/apiDb'
 const bcrypt = require('bcryptjs');
 
 export const SignUpBootstrap = () => {
-
   const [values,setValues] = useState({
     email:"",
     password:"",
@@ -73,7 +72,7 @@ export const SignUpBootstrap = () => {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-4">
         <Form.Label 
           className="labelForm">Password confirmation</Form.Label>
         <Form.Control 
@@ -84,9 +83,10 @@ export const SignUpBootstrap = () => {
           required
         />
       </Form.Group>
-      <Form.Group className="mb-3" >
+     
+     {/* <Form.Group className="mb-3" >
         <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+      </Form.Group> */}
 
       <Button variant="success" type="submit">
         Submit

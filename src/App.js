@@ -17,8 +17,22 @@ import {Bills} from '../src/formularios/Bills';
 import { Statistics } from './components/Statistics';
 import { Anomalies } from './formularios/Anomalies'
 import { Services } from './formularios/Services';
+import { ChangePassword } from './components/ChangePassword';
+import {ChangePassSol} from './components/ChangePassSol';
+
+import { useState } from 'react';
 
 function App() {
+
+  const [user, setUser] = useState(false);
+
+  const listenerUser = () => {  
+    let data = JSON.parse(localStorage.getItem('user'));
+    if(data.id === 35){
+      setUser(true);
+    }
+  }
+
   return (    
     <BrowserRouter>
       <Routes>
@@ -32,6 +46,8 @@ function App() {
         <Route path="/statistics" element={<Enrutador renderizador={<Statistics/>}/>}/>
         <Route path="/anomalies" element={<Enrutador renderizador={<Anomalies/>}/>}/>
         <Route path="/services" element={<Enrutador renderizador={<Services/>}/>}/>
+        <Route path="/changePass" element={<Enrutador renderizador={<ChangePassword/>}/>}/>
+        <Route path="/solChangePass" element={<Enrutador renderizador={ user ? <ChangePassword/> : <ChangePassSol/>}/>}/>
       </Routes>
     </BrowserRouter>
   );

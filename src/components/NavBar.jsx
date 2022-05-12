@@ -2,8 +2,19 @@ import logo from "../images/backpackers-logos_white.png";
 
 import { Button, Navbar, Nav, FormLabel } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const [log, setLog] = useState(false);
+
+  useEffect(() => {
+    let loggin = localStorage.getItem('client');
+    if(loggin){
+      setLog(true);
+    }
+  }, [props])
+  
+
   return (
     <Navbar className="NavBar">
       <Navbar.Brand>
@@ -34,15 +45,18 @@ const NavBar = () => {
       </Nav>
       <Nav>
         <Link to="/login">
-          <Button variant="outline-light" size="lg" className="botonLogin">
-            LOG IN
-          </Button>
+          <Button 
+            variant="outline-light" 
+            size="lg" 
+            className="botonLogin"
+            hidden={log}
+          >LOG IN / SIGN UP</Button>
         </Link>
-        <Link to="/signup">
+        {/* <Link to="/signup">
           <Button variant="light" size="lg" className="botonLogin">
             SIGN UP
           </Button>
-        </Link>
+        </Link> */}
       </Nav>
     </Navbar>
   );

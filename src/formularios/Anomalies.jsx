@@ -8,7 +8,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 export const Anomalies = () => {    
   //BACKEND CONNECTION FIND_CLIENT
-  const [formElementDisabled, setFormElementDisabled] = useState(true);  
+  const [formElementDisabled, setFormElementDisabled] = useState(true);   
   const [clientMail, setClientMail] = useState("");
 
   const [values, setValues] = useState({
@@ -40,7 +40,6 @@ export const Anomalies = () => {
         country:data.country,
         cellphone:data.cellphone
     });
-    console.log(values);
   };
 
  
@@ -72,9 +71,9 @@ export const Anomalies = () => {
 //   };
 
   return (
-    <Container className="reservationForm" >
+    <Container className="reservationForm" fluid>
       <Row className="formBills">
-      <Row >
+      <Row>
       <Form onSubmit={handleSubmitFind}>
         <Row>
           <Col xs={12}>

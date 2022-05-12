@@ -92,7 +92,8 @@ export const Reservation = (props) => {
 
   return (
     <Container className="reservationForm" fluid>
-      <Form className="formBills" onSubmit={handleSubmit}>
+      <Row className="formBills">
+      <Form.Group onSubmit={handleSubmit}>
         <Row>
           <Col xs={12}>
             <Form.Label className="labelBills">Reservation</Form.Label>
@@ -316,8 +317,8 @@ export const Reservation = (props) => {
             </Button>
           </Col>
         </Row>
-
-      </Form>
+      </Form.Group>
+    </Row>
 
     
 
